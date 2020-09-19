@@ -1,10 +1,16 @@
 package net.modernjava.concurrency.deadlock;
 
 import java.lang.management.ManagementFactory;
+import java.lang.management.ThreadInfo;
 import java.lang.management.ThreadMXBean;
+import java.util.Arrays;
 import java.util.concurrent.CountDownLatch;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class DeadlockDetector implements Runnable{
+  private static Logger logger = LoggerFactory.getLogger(DeadlockDetector.class);
+
   private final CountDownLatch startSignal;
   private final CountDownLatch endSignal;
   private Task task=null;
@@ -40,6 +46,42 @@ public class DeadlockDetector implements Runnable{
     }
     finally {
       endSignal.countDown();
+    }
+  }
+  public static void monitorDeadlocks(){
+    while(true){
+      ThreadMXBean mxBean=ManagementFactory.getThreadMXBean();
+      long[] threadIds=mxBean.findDeadlockedThreads();
+      if(threadIds!=null){
+        logDeadlockAndQuit(mxBean, threadIds);
+      }
+      waitUninterruptedlyForMs(500);
+    }
+  }
+  private static void logDeadlockAndQuit(ThreadMXBean bean, long[] threadIds) {
+    logger.error("Threads in deadlocks: {}", Arrays.toString(threadIds));
+
+    ThreadInfo[] info = bean.getThreadInfo(threadIds);
+    for (ThreadInfo threadInfo : info) {
+      logger.error("Thread \"{}\" is waiting on lock \"{}\" taken by thread \"{}\"",
+          threadInfo.getThreadName(), threadInfo.getLockInfo(), threadInfo.getLockOwnerName());
+
+      // Attempt to log the stack trace, when available
+      for (StackTraceElement stackTraceElement : threadInfo.getStackTrace()) {
+        logger.error("{}::{} @ {}:{}",
+            stackTraceElement.getClassName(), stackTraceElement.getMethodName(),
+            stackTraceElement.getFileName(), stackTraceElement.getLineNumber());
+      }
+    }
+
+    System.exit(0);
+  }
+
+  private static void waitUninterruptedlyForMs(int ms) {
+    try {
+      Thread.sleep(ms);
+    } catch (InterruptedException e) {
+      // Ignore it
     }
   }
 }
