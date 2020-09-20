@@ -4,9 +4,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-/**
- * Created by rajeevkumarsingh on 11/05/17.
- */
 class FineGrainedSynchronizedCounter {
     private int count = 0;
 

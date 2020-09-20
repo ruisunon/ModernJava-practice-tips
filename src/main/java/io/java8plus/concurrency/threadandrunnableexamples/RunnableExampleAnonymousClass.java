@@ -1,8 +1,5 @@
 package io.java8plus.concurrency.threadandrunnableexamples;
 
-/**
- * Created by rajeevkumarsingh on 08/05/17.
- */
 public class RunnableExampleAnonymousClass {
 
     public static void main(String[] args) {

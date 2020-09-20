@@ -5,9 +5,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-/**
- * Created by rajeevkumarsingh on 11/05/17.
- */
 class ReadWriteCounter {
     ReadWriteLock lock = new ReentrantReadWriteLock();
 

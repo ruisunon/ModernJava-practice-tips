@@ -5,9 +5,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
-/**
- * Created by rajeevkumarsingh on 11/05/17.
- */
+
 class ReentrantLockCounter {
     private final ReentrantLock lock = new ReentrantLock();
 

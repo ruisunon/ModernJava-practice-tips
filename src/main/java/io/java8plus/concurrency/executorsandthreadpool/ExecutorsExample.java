@@ -4,9 +4,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-/**
- * Created by rajeevkumarsingh on 09/05/17.
- */
 public class ExecutorsExample {
     public static void main(String[] args) {
         System.out.println("Inside : " + Thread.currentThread().getName());

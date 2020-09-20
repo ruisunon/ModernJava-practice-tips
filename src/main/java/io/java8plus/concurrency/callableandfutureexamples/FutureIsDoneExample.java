@@ -2,9 +2,7 @@ package io.java8plus.concurrency.callableandfutureexamples;
 
 import java.util.concurrent.*;
 
-/**
- * Created by rajeevkumarsingh on 11/05/17.
- */
+
 public class FutureIsDoneExample {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
         ExecutorService executorService = Executors.newSingleThreadExecutor();

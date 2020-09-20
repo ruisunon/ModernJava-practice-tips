@@ -4,9 +4,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.*;
 
-/**
- * Created by rajeevkumarsingh on 10/05/17.
- */
 public class InvokeAllExample {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
         ExecutorService executorService = Executors.newFixedThreadPool(5);

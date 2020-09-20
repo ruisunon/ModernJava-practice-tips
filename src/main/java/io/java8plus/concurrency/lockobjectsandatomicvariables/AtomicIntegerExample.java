@@ -5,9 +5,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
-/**
- * Created by rajeevkumarsingh on 24/07/17.
- */
 
 class AtomicCounter {
     private AtomicInteger count = new AtomicInteger(0);
