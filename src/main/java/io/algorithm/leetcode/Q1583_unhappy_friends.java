@@ -53,6 +53,56 @@ package io.algorithm.leetcode;
 //    Each person is contained in exactly one pair.
 public class Q1583_unhappy_friends {
   public int unhappyFriends(int n, int[][] preferences, int[][] pairs) {
+    int[][] prefMap=new int[n][n];
+    for (int i=0; i<n; i++){
+      for (int j=0; j<n-1; j++){
+        prefMap[i][preferences[i][j]]=j;
+      }
+    }
+    int a, b, prefA, prefB, prefE1, prefE2, e1, e2;
+    int count=0;
+    boolean[] flags=new boolean[n];
+    for(int i=0; i<pairs.length; i++){
+      a=pairs[i][0];
+      b=pairs[i][1];
+      prefB=prefMap[a][b];
+      prefA=prefMap[b][a];
+      for(int j=i+1; j<pairs.length; j++){
+        e1=pairs[j][0];
+        e2=pairs[j][1];
+        prefE2=prefMap[e1][e2];
+        prefE1=prefMap[e2][e1];
+        if(prefB>prefMap[a][e1] && prefE2>prefMap[e1][a]){
+          flags[a]=true;
+          flags[e1]=true;
+        }
+        if(prefB>prefMap[a][e2] && prefE1>prefMap[e2][a]){
+          flags[a]=true;
+          flags[e2]=true;
+        }
+        if(prefA>prefMap[b][e1] && prefE2>prefMap[e1][b]){
+          flags[b]=true;
+          flags[e1]=true;
+        }
+        if(prefA>prefMap[b][e2] && prefE1>prefMap[e2][b]){
+          flags[b]=true;
+          flags[e2]=true;
+        }
+      }
+    }
+    for(boolean flag: flags){
+      if(flag) count ++;
+    }
+    return count;
+  }
 
+  public static void main(String[] args) {
+    int n=4;
+    int [][] prefs={{1,2,3},{3,2,0},{3,1,0},{1,2,0}};
+    int [][] pairs={{0,1},{2,3}};
+    Q1583_unhappy_friends solution = new Q1583_unhappy_friends();
+    String s = "84532", t = "34852";
+    int res = solution.unhappyFriends(n, prefs, pairs);
+    System.out.println(res);
   }
 }
