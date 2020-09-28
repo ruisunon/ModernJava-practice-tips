@@ -1,4 +1,4 @@
-package io.problemsolving.streams;
+package io.functional.streams;
 
 import java.util.Arrays;
 import java.util.List;

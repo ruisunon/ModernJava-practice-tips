@@ -1,4 +1,4 @@
-package io.problemsolving.streams;
+package io.functional.streams;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

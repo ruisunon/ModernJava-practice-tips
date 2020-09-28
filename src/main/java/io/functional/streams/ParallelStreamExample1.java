@@ -1,4 +1,4 @@
-package io.problemsolving.streams;
+package io.functional.streams;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;

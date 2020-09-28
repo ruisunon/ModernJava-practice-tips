@@ -1,4 +1,4 @@
-package io.problemsolving.streams;
+package io.functional.streams;
 
 import java.io.Serializable;
 import java.math.BigDecimal;

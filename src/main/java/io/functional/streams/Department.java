@@ -1,4 +1,4 @@
-package io.problemsolving.streams;
+package io.functional.streams;
 
 public class Department {
 

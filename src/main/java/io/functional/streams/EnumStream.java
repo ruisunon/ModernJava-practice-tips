@@ -1,11 +1,11 @@
 package io.functional.streams;
 
 
-import static io.functional.streams._Stream.Gender.*;
+import static io.functional.streams.EnumStream.Gender.*;
 
 import java.util.List;
 
-public class _Stream {
+public class EnumStream {
 
   public static void main(String[] args) {
 
