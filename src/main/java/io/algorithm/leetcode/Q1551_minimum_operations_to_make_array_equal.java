@@ -25,7 +25,18 @@ package io.algorithm.leetcode;
 //    1 <= n <= 10^4
 public class Q1551_minimum_operations_to_make_array_equal {
   public int minOperations(int n) {
-    int res=0;
-    return res;
+    int mid, val;
+    mid=n/2;
+    val=2*mid+1;
+    if((n & 1)==0){ // even numbers
+      mid -=1;
+      val =(val +(2*mid+1))/2;
+
+    }
+    int ans=0;
+    for(int i=0; i<n/2; i++){
+      ans=ans+ val-(2*i +1);
+    }
+    return ans;
   }
 }
