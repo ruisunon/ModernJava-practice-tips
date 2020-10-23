@@ -26,7 +26,7 @@ public class Retrier<T> {
     return result;
   }
   private void tryOnce(){
-    CompletableFuture.supplyAsync(supplier).handle(this::handle);
+       CompletableFuture.supplyAsync(supplier).handle(this::handle);
   }
   private T handle( T res, Throwable t){
     if(t!=null){
