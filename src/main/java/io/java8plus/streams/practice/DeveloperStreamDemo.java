@@ -1,6 +1,6 @@
 package io.java8plus.streams.practice;
 
-import io.java8plus.streams.Developer;
+import io.java8plus.streams.entities.Developer;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;

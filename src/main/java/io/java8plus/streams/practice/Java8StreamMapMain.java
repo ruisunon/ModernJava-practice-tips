@@ -2,10 +2,10 @@ package io.java8plus.streams.practice;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import io.java8plus.streams.City;
-import io.java8plus.streams.Department;
-import io.java8plus.streams.Employee;
-import io.java8plus.streams.Park;
+import io.java8plus.streams.entities.City;
+import io.java8plus.streams.entities.Department;
+import io.java8plus.streams.entities.Employee;
+import io.java8plus.streams.entities.Park;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;

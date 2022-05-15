@@ -6,21 +6,6 @@ import java.util.concurrent.Semaphore;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-// This class represent the printer queue/ printer. This class has 3 main attributes which control the logic of
-// selecting a free printer out of 3 printers and lock it for printing a job. After printing the document, printer is
-// released so that it is again free and available for printing a new job from print queue.
-//
-//    This class has two methods getPrinter() and releasePrinter() which are responsible for acquiring a free printer
-//    and putting it back in free printers pool.
-//
-//    Another method printJob() actually does the core job i.e. acquiring a printer, execute print job and then
-//    release the printer.
-//
-//    It uses below two variables for doing the job:
-//
-//    semaphore : This variable keep track of no. of printers used at any point of time.
-//    printerLock : Used for locking the printer pool before checking/acquiring a free printer out of three available
-//    printers.
 
 class PrinterQueue {
 

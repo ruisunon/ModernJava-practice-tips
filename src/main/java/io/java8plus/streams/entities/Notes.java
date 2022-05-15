@@ -1,4 +1,4 @@
-package io.java8plus.streams;
+package io.java8plus.streams.entities;
 
 public class Notes {
 

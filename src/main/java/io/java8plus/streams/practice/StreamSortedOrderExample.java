@@ -1,6 +1,6 @@
 package io.java8plus.streams.practice;
 
-import io.java8plus.streams.Notes;
+import io.java8plus.streams.entities.Notes;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;

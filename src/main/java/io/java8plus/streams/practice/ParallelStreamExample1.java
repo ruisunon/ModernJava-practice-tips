@@ -1,5 +1,5 @@
 package io.java8plus.streams.practice;
-import io.java8plus.streams.Employee;
+import io.java8plus.streams.entities.Employee;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;

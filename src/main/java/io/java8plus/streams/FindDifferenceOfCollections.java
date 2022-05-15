@@ -1,5 +1,6 @@
 package io.java8plus.streams;
 
+import io.java8plus.streams.entities.Student;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

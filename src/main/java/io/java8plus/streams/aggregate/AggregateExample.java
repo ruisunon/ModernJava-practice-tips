@@ -12,7 +12,7 @@ import java.util.TreeMap;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public class AggregateDemo1 {
+public class AggregateExample {
   public static void main(String[] args) {
     // method one
     Map<Item, List<Item>> newList = getList().stream().collect(Collectors.groupingBy(Item::getName)).entrySet().stream()
@@ -31,6 +31,9 @@ public class AggregateDemo1 {
             e -> e.getValue(), (e1, e2) -> e1, TreeMap::new));
     System.out.println("newList: " + newList.toString());
 
+    // When using the groupingBy collector, if we want to be specific about which type of Map to get from group by,
+    // we can use the third variation of the groupdingBy method that allows us to change the type of the Map by passing
+    // a Map suppi
   }
 
   public static List<Item> getList() {
