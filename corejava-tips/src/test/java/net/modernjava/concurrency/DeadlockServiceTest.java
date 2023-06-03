@@ -1,4 +1,4 @@
-package net.modernjava.concurrency.deadlock;
+package net.modernjava.concurrency;
 
 import static org.junit.jupiter.api.Assertions.*;
 

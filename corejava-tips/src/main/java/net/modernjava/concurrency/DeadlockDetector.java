@@ -1,4 +1,4 @@
-package net.modernjava.concurrency.deadlock;
+package net.modernjava.concurrency;
 
 import java.lang.management.ManagementFactory;
 import java.lang.management.ThreadInfo;

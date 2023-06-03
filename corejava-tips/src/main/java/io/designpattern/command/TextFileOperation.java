@@ -1,4 +1,4 @@
-package io.designpattern.modernjava.command;
+package io.designpattern.command;
 
 @FunctionalInterface
 public interface TextFileOperation {

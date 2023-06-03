@@ -1,4 +1,4 @@
-package net.modernjava.concurrency.deadlock;
+package net.modernjava.concurrency;
 
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 public class Task {

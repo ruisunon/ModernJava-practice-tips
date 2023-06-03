@@ -1,4 +1,4 @@
-package io.designpattern.modernjava.command;
+package io.designpattern.command;
 
 public class TextFileApplication {
     

@@ -1,4 +1,4 @@
-package io.designpattern.modernjava.command;
+package io.designpattern.command;
 
 import java.util.ArrayList;
 import java.util.List;
